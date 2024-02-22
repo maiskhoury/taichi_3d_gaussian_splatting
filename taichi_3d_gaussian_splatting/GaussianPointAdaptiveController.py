@@ -190,7 +190,7 @@ class GaussianPointAdaptiveController:
         floater_mask = torch.zeros_like(point_id_list, dtype=torch.bool)
         floater_mask_in_camera = torch.zeros_like(point_id_in_camera_list, dtype=torch.bool)
 
-        floater_point_id = torch.empty(0, dtype=torch.int32, device=pointcloud.device)
+        floater_point_id = torch.empty(0, dtype=torch.int64, device=pointcloud.device)
         if self.iteration_counter > self.config.iteration_start_remove_floater:
             floater_mask_in_camera = ((num_affected_pixels > self.config.floater_near_camrea_num_pixels_threshold) & \
                     (point_depth_in_camera < self.config.floater_depth_threshold))

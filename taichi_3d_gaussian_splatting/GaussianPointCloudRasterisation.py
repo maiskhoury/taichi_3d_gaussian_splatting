@@ -1125,6 +1125,7 @@ class GaussianPointCloudRasterisation(torch.nn.Module):
                                              41:] *= self.config.grad_high_order_color_factor
 
                     if backward_valid_point_hook is not None:
+                        point_id_in_camera_list = point_id_in_camera_list.long()
                         backward_valid_point_hook_input = GaussianPointCloudRasterisation.BackwardValidPointHookInput(
                             point_id_in_camera_list=point_id_in_camera_list,
                             grad_point_in_camera=grad_pointcloud[point_id_in_camera_list],
