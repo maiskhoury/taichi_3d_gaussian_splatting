@@ -1,6 +1,6 @@
 taichi>=1.6.0
 matplotlib
-numpy
+numpy==1.23
 pytorch_msssim
 dataclass-wizard
 pillow
